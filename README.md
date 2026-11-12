@@ -33,7 +33,7 @@ Desktop captures at **1440×900** from `npm start` on `main`. Regenerate with `n
 
 ### Articulation meter (GSAP-smoothed presets)
 
-Four real-world bed positions — head and foot hinge from a **flat midline baseline** (Flat, TV / Read, Zero-G, Anti-Snore):
+Four presets on a **split base** — head and foot sections lift on their **hinge joints**; the **middle deck stays flat** on the base (four joint markers: head end, head hinge, foot hinge, foot end):
 
 ![Articulation meter cycling through four adjustable-bed presets with head and foot sections lifting from a center hinge](docs/screenshots/articulation-meter.gif)
 
