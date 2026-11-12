@@ -7,6 +7,7 @@
     "test": "node scripts/self-check.mjs",
     "start": "node scripts/server.mjs",
     "capture:dossier": "node scripts/capture-dossier.mjs",
-    "capture:articulation-gif": "node scripts/record-articulation-gif.mjs"
+    "capture:articulation-gif": "node scripts/record-articulation-gif.mjs",
+    "sync:ultramatic": "node scripts/sync-from-source.mjs"
   }
 }
