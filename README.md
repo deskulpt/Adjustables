@@ -10,7 +10,7 @@ This repository is **proprietary**. The concept, visual theme, page architecture
 - Shared shell template, design tokens, and interactive homepage sections (articulation meter, fit check, hotspots)
 - Asset pipeline and local static server for development and QA
 - Research and design-reference docs under `docs/`
-- **Project dossier** (objectives, GSAP modules, full-page captures): [docs/PROJECT_DOSSIER.md](docs/PROJECT_DOSSIER.md)
+- **Project dossier** (objectives, GSAP modules, motion map): [docs/PROJECT_DOSSIER.md](docs/PROJECT_DOSSIER.md)
 
 ## License
 
@@ -23,13 +23,50 @@ npm install   # no dependencies required; scripts use Node built-ins
 npm start     # http://localhost:3000
 npm test      # structural self-check
 npm run build # regenerate pages from templates
+npm run capture:dossier   # optional; requires Playwright for screenshots
 ```
 
-## Preview (local smoke test)
+## Visual preview
 
-Quick captures (1440×900): [docs/screenshots/](docs/screenshots/).
+Desktop captures at **1440×900** from `npm start` on `main`. Regenerate with `npm run capture:dossier` (see dossier doc).
 
-**Full-length + GSAP interaction dossier** (updated after `main` merge): [docs/dossier/](docs/dossier/) — see [PROJECT_DOSSIER.md](docs/PROJECT_DOSSIER.md) for objectives, design process, and motion module map.
+### Homepage — hero & brand
+
+![SleepSoul homepage hero, SVG wordmark, and adjustable-bed video hero](docs/dossier/01-home-hero-header.png)
+
+### Homepage — full scroll
+
+![Full-length SleepSoul homepage showing need-first layout, solutions, engineering, reviews, and service bands](docs/dossier/02-home-full-page.png)
+
+### GSAP motion — scroll reveals & motion scene
+
+![Need-first choice cards after GSAP scroll reveal](docs/dossier/03-gsap-reveal-need-cards.png)
+
+![Lifestyle, therapy, and independence solution cards](docs/dossier/04-gsap-reveal-solution-grid.png)
+
+![Precision in motion scene with staggered GSAP cards and axis markers](docs/dossier/05-gsap-motion-scene.png)
+
+### Engineering & product education
+
+![Engineering hotspot callouts on the adjustable base](docs/dossier/06-engineering-hotspots.png)
+
+![Hero detail panel with GSAP fade and articulation meter — Zero-G position](docs/dossier/07-gsap-hero-detail-panel.png)
+
+![Articulation meter teaching control: head and foot angles](docs/dossier/08-articulation-meter-zero-g.png)
+
+### Social proof & funnel pages
+
+![Review bento grid with owner stories and imagery](docs/dossier/09-review-bento.png)
+
+![Find Your Bed guided funnel — full page](docs/dossier/10-find-your-bed-full.png)
+
+![Shop adjustable beds category — full page](docs/dossier/11-shop-adjustable-beds-full.png)
+
+### Additional routes (smoke captures)
+
+![About — Canadian heritage story](docs/screenshots/about.png)
+
+![Shop adjustable beds — alternate capture](docs/screenshots/shop-adjustable-beds.png)
 
 ## Project structure
 
@@ -40,6 +77,7 @@ Quick captures (1440×900): [docs/screenshots/](docs/screenshots/).
 | `public/assets/` | Brand imagery and media |
 | `scripts/` | Dev server, build, and QA scripts |
 | `docs/research/` | Page specs and behavior notes |
+| `docs/dossier/` | Full-page and interaction screenshots |
 
 ## Commercial use
 
