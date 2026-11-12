@@ -3,6 +3,8 @@
   const app = document.querySelector('#app');
   const year = document.querySelector('[data-year]');
   const asset = (name) => '/assets/' + name;
+  const motionEnabled = () => Boolean(window.gsap) && !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
   const states = {
     flat: { label: 'FLAT', head: 0, foot: 0, headValue: '0°', footValue: '0°', copy: 'A familiar starting point for sleeping, stretching out or making the bed.' },
     tv: { label: 'TV / READ', head: 34, foot: 8, headValue: '34°', footValue: '8°', copy: 'Raise your upper body and legs for a more supported angle while reading or watching television.' },
@@ -28,8 +30,15 @@
     return [
       '<div class="articulation-meter" data-articulation tabindex="0" aria-label="Adjustable bed articulation meter. Use the arrow keys to change position.">',
       '<div class="meter-header"><p>ARTICULATION METER</p><strong data-meter-label>FLAT</strong></div>',
-      '<div class="bed-diagram" data-bed-diagram style="--head-angle:0;--foot-angle:0;--head-lift:0px;--foot-lift:0px">',
-      '<div class="bed-part bed-head"></div><div class="bed-part bed-foot"></div><div class="bed-part bed-base"></div><div class="bed-leg"></div>',
+      '<div class="bed-diagram" data-bed-diagram style="--head-angle:0;--foot-angle:0">',
+      '<div class="bed-baseline" aria-hidden="true"></div>',
+      '<div class="bed-platform" data-bed-platform>',
+      '<div class="bed-plank bed-head" data-bed-head></div>',
+      '<div class="bed-plank bed-foot" data-bed-foot></div>',
+      '</div>',
+      '<div class="bed-hinge bed-hinge-mid" aria-hidden="true"></div>',
+      '<span class="bed-pivot bed-pivot-head" aria-hidden="true"></span>',
+      '<span class="bed-pivot bed-pivot-foot" aria-hidden="true"></span>',
       '</div>',
       '<div class="meter-readout"><span>HEAD <strong data-head-angle>0°</strong></span><span>FOOT <strong data-foot-angle>0°</strong></span></div>',
       '<div class="meter-tabs" role="tablist" aria-label="Bed positions">',
@@ -283,36 +292,75 @@
     const motionCards = [...document.querySelectorAll('.motion-card')];
     const motionMarkers = [...document.querySelectorAll('.motion-marker')];
     const showAll = () => [...items, ...motionCards, ...motionMarkers].forEach((item) => item.classList.add('is-visible'));
-    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    const revealDelay = (item) => (item.dataset.reveal?.startsWith('delay-') ? Number(item.dataset.reveal.replace('delay-', '')) * 0.09 : 0);
+
+    if (motionEnabled()) {
+      items.forEach((item) => {
+        item.classList.add('is-gsap');
+        window.gsap.set(item, { autoAlpha: 0, y: 24 });
+      });
+      motionCards.forEach((card) => {
+        card.style.transition = 'none';
+        window.gsap.set(card, { autoAlpha: 0, y: 35 });
+      });
+      motionMarkers.forEach((marker) => {
+        marker.style.transition = 'none';
+        window.gsap.set(marker, { autoAlpha: 0, scaleY: 0, transformOrigin: 'bottom center' });
+      });
+    }
+
+  const reduced = !motionEnabled();
     const animate = (item, delay) => {
-      if (window.gsap && !reduced) window.gsap.to(item, { opacity: 1, y: 0, duration: .78, delay: delay || 0, ease: 'power3.out', overwrite: true });
-      else item.classList.add('is-visible');
+      if (motionEnabled()) {
+        window.gsap.to(item, {
+          autoAlpha: 1,
+          y: 0,
+          duration: 0.78,
+          delay: delay || 0,
+          ease: 'power3.out',
+          overwrite: 'auto',
+          onComplete: () => item.classList.add('is-visible'),
+        });
+      } else {
+        item.classList.add('is-visible');
+      }
     };
+
     if (reduced || !('IntersectionObserver' in window)) {
       showAll();
       return;
     }
+
     const observer = new IntersectionObserver((entries, current) => {
       entries.forEach((entry) => {
         if (!entry.isIntersecting) return;
-        animate(entry.target, entry.target.dataset.reveal?.startsWith('delay-') ? Number(entry.target.dataset.reveal.replace('delay-', '')) * .09 : 0);
+        animate(entry.target, revealDelay(entry.target));
         current.unobserve(entry.target);
       });
-    }, { threshold: .14, rootMargin: '0px 0px -8% 0px' });
+    }, { threshold: 0.14, rootMargin: '0px 0px -8% 0px' });
     items.forEach((item) => observer.observe(item));
+
     const motion = document.querySelector('[data-motion-scene]');
     if (motion) {
       const motionObserver = new IntersectionObserver((entries, current) => {
         if (!entries[0]?.isIntersecting) return;
-        if (window.gsap) {
-          window.gsap.to(motionCards, { opacity: 1, y: 0, duration: .82, stagger: .11, ease: 'power3.out' });
-          window.gsap.to(motionMarkers, { opacity: 1, scaleY: 1, duration: .82, stagger: .09, delay: .2, ease: 'power3.out', transformOrigin: 'bottom center' });
+        if (motionEnabled()) {
+          window.gsap.timeline({
+            defaults: { ease: 'power3.out', overwrite: 'auto' },
+            onComplete: () => {
+              motionCards.forEach((card) => card.classList.add('is-visible'));
+              motionMarkers.forEach((marker) => marker.classList.add('is-visible'));
+            },
+          })
+            .to(motionCards, { autoAlpha: 1, y: 0, duration: 0.82, stagger: 0.11 })
+            .to(motionMarkers, { autoAlpha: 1, scaleY: 1, duration: 0.82, stagger: 0.09, transformOrigin: 'bottom center' }, '-=0.55');
         } else {
-          motionCards.forEach((card, index) => setTimeout(() => card.classList.add('is-visible'), index * 110));
-          motionMarkers.forEach((marker, index) => setTimeout(() => marker.classList.add('is-visible'), index * 90 + 180));
+          motionCards.forEach((card, index) => window.setTimeout(() => card.classList.add('is-visible'), index * 110));
+          motionMarkers.forEach((marker, index) => window.setTimeout(() => marker.classList.add('is-visible'), index * 90 + 180));
         }
         current.disconnect();
-      }, { threshold: .25 });
+      }, { threshold: 0.25 });
       motionObserver.observe(motion);
     }
   }
@@ -328,13 +376,21 @@
       const foot = meter.querySelector('[data-foot-angle]');
       const copy = meter.querySelector('[data-meter-copy]');
       let active = 0;
-      const setState = (key) => {
+      const applyAngles = (state, animate) => {
+        if (!diagram) return;
+        const vars = { '--head-angle': state.head, '--foot-angle': state.foot };
+        if (animate && motionEnabled()) {
+          window.gsap.to(diagram, { ...vars, duration: 0.85, ease: 'power2.inOut', overwrite: 'auto' });
+        } else {
+          diagram.style.setProperty('--head-angle', String(state.head));
+          diagram.style.setProperty('--foot-angle', String(state.foot));
+        }
+      };
+
+      const setState = (key, animate = true) => {
         const state = states[key] || states.flat;
         active = Math.max(0, keys.indexOf(key));
-        diagram?.style.setProperty('--head-angle', state.head);
-        diagram?.style.setProperty('--foot-angle', state.foot);
-        diagram?.style.setProperty('--head-lift', Math.round(state.head * .27) + 'px');
-        diagram?.style.setProperty('--foot-lift', Math.round(state.foot * .22) + 'px');
+        applyAngles(state, animate);
         if (label) label.textContent = state.label;
         if (head) head.textContent = state.headValue;
         if (foot) foot.textContent = state.footValue;
@@ -348,7 +404,7 @@
         active = (active + (event.key === 'ArrowRight' || event.key === 'ArrowDown' ? 1 : -1) + keys.length) % keys.length;
         setState(keys[active]);
       });
-      setState('flat');
+      setState('flat', false);
     });
   }
 
@@ -554,13 +610,13 @@
         extra: '<a class="button button-dark" href="/book-a-consultation/">Book a fitting <span>→</span></a>'
       }
     };
-    const canAnimate = () => window.gsap && !window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
+    const canAnimate = () => motionEnabled();
     const close = () => {
       surface.classList.remove('is-panel-open');
       panel.classList.remove('is-open');
       panel.setAttribute('aria-hidden', 'true');
       if (canAnimate()) {
-        window.gsap.to(panel, { opacity: 0, duration: .2, ease: 'power2.in', onComplete: () => { panel.hidden = true; panel.style.opacity = ''; } });
+        window.gsap.to(panel, { autoAlpha: 0, duration: 0.2, ease: 'power2.in', onComplete: () => { panel.hidden = true; window.gsap.set(panel, { clearProps: 'opacity,visibility' }); } });
       } else {
         window.setTimeout(() => { if (!panel.classList.contains('is-open')) panel.hidden = true; }, 360);
       }
@@ -573,7 +629,7 @@
       surface.classList.add('is-panel-open');
       requestAnimationFrame(() => {
         panel.classList.add('is-open');
-        if (canAnimate()) window.gsap.fromTo(panel, { opacity: 0 }, { opacity: 1, duration: .42, ease: 'power2.out' });
+        if (canAnimate()) window.gsap.fromTo(panel, { autoAlpha: 0 }, { autoAlpha: 1, duration: 0.42, ease: 'power2.out' });
       });
       window.setTimeout(() => {
         initMeters();
@@ -641,7 +697,8 @@
       markup = markup.replace('<div class="hero-meter-wrap">' + meterMarkup() + '</div>', '');
       const overlap = '<section class="hero-overlap"><div class="container"><div class="overlap-intro"><span class="eyebrow">One system · more ways to rest</span><h2>Designed around the way you sleep, move and live at home.</h2><p>From a calmer bedtime position to an easier morning, SleepSoul helps you understand the whole sleep system.</p><a class="button button-dark" href="/find-your-bed/">Find your best fit <span>→</span></a></div><div class="overlap-bento"><article><div class="overlap-card-media"><img src="' + asset('sleepsoul-system-4k.png') + '" alt="SleepSoul adjustable bed in a raised position"></div><div class="overlap-card-copy"><span>01</span><strong>Adjust the angle</strong><p>Find a position that feels right for reading, resting or winding down.</p></div></article><article><div class="overlap-card-media"><img src="' + asset('postureplus-package.webp') + '" alt="SleepSoul PosturePlus sleep system"></div><div class="overlap-card-copy"><span>02</span><strong>Check the fit</strong><p>Choose the mattress and base as one considered system.</p></div></article><article><div class="overlap-card-media"><img src="' + asset('hi-low-bed.jpg') + '" alt="SleepSoul Hi-Low bed"></div><div class="overlap-card-copy"><span>03</span><strong>Talk it through</strong><p>Get delivery, setup and human guidance before you decide.</p></div></article></div></div></section>';
       const interactive = '<section class="section system-interactive" aria-labelledby="system-interactive-title"><div class="container"><div class="system-heading"><div><span class="eyebrow">Explore one part at a time</span><h2 id="system-interactive-title">See what moves.</h2></div><p>Choose one point to learn what changes. Close the panel when you’re ready to return to the image.</p></div><div class="system-stage" data-system-stage><img src="' + asset('sleepsoul-system-4k.png') + '" alt="A clean SleepSoul adjustable bed moving into a supported position"><span class="system-stage-label">Tap one point to learn more</span>' + controls + '</div></div></section>';
-      markup = markup.replace('<section class="trust-strip"', overlap + interactive + '<section class="trust-strip"');
+      const articulationDemo = '<section class="section articulation-section" id="articulation-demo"><div class="container articulation-grid"><div class="articulation-copy" data-reveal><span class="eyebrow">Articulation meter</span><h2>Head and foot move from a level midline — like a real base.</h2><p>Four everyday presets show how each section hinges at the waist and lifts independently from a flat baseline.</p></div><div class="articulation-meter-wrap" data-reveal="delay-1">' + meterMarkup() + '</div></div></section>';
+      markup = markup.replace('<section class="trust-strip"', overlap + interactive + articulationDemo + '<section class="trust-strip"');
       const reviewStart = markup.indexOf('<section class="section review-section">');
       if (reviewStart >= 0) {
         const reviewEnd = markup.indexOf('</section>', reviewStart) + '</section>'.length;

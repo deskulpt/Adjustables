@@ -6,6 +6,7 @@
     "build": "node scripts/build-clone.mjs",
     "test": "node scripts/self-check.mjs",
     "start": "node scripts/server.mjs",
-    "capture:dossier": "node scripts/capture-dossier.mjs"
+    "capture:dossier": "node scripts/capture-dossier.mjs",
+    "capture:articulation-gif": "node scripts/record-articulation-gif.mjs"
   }
 }
