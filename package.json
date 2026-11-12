@@ -1,0 +1,10 @@
+{
+  "name": "sleepsoul-sleep-prototype",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build-clone.mjs",
+    "test": "node scripts/self-check.mjs",
+    "start": "node scripts/server.mjs"
+  }
+}

@@ -1,0 +1,779 @@
+{
+  "url": "file:///Users/hamzakhurram/Desktop/sleepsoul-prototype/index.html",
+  "title": "",
+  "viewport": {
+    "width": 1440,
+    "height": 900,
+    "devicePixelRatio": 1
+  },
+  "scroll": {
+    "width": 1440,
+    "height": 900
+  },
+  "body": {
+    "className": "",
+    "styles": {
+      "fontFamily": "Times",
+      "fontSize": "17px",
+      "fontWeight": "400",
+      "lineHeight": "25.5px",
+      "letterSpacing": "normal",
+      "color": "rgb(0, 0, 0)",
+      "backgroundColor": "rgb(255, 255, 255)",
+      "backgroundImage": "none",
+      "padding": "0px",
+      "margin": "0px",
+      "width": "1440px",
+      "height": "900px",
+      "maxWidth": "none",
+      "minHeight": "0px",
+      "display": "block",
+      "flexDirection": "row",
+      "justifyContent": "normal",
+      "alignItems": "normal",
+      "gap": "normal",
+      "gridTemplateColumns": "none",
+      "borderRadius": "0px",
+      "border": "0px solid rgb(0, 0, 0)",
+      "boxShadow": "none",
+      "position": "relative",
+      "top": "0px",
+      "right": "0px",
+      "bottom": "0px",
+      "left": "0px",
+      "zIndex": "auto",
+      "opacity": "1",
+      "transform": "none",
+      "transition": "all",
+      "overflow": "visible",
+      "objectFit": "fill",
+      "objectPosition": "50% 50%",
+      "filter": "none",
+      "backdropFilter": "none"
+    }
+  },
+  "htmlClass": "",
+  "fonts": [
+    {
+      "family": "NeueMontreal",
+      "weight": "200 800",
+      "style": "normal",
+      "status": "loaded"
+    },
+    {
+      "family": "NeueMontreal Fallback",
+      "weight": "normal",
+      "style": "normal",
+      "status": "loaded"
+    },
+    {
+      "family": "NeueMontrealItalic",
+      "weight": "200 800",
+      "style": "italic",
+      "status": "unloaded"
+    },
+    {
+      "family": "NeueMontrealItalic Fallback",
+      "weight": "normal",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "EurostileExtended",
+      "weight": "200 800",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "EurostileExtended Fallback",
+      "weight": "normal",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "DharmaGothic",
+      "weight": "400 700",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "DharmaGothic Fallback",
+      "weight": "normal",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "IBM Plex Mono",
+      "weight": "500",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "IBM Plex Mono",
+      "weight": "500",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "IBM Plex Mono",
+      "weight": "500",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "IBM Plex Mono",
+      "weight": "500",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "IBM Plex Mono",
+      "weight": "500",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "IBM Plex Mono Fallback",
+      "weight": "normal",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Oswald",
+      "weight": "400",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Oswald",
+      "weight": "400",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Oswald",
+      "weight": "400",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Oswald",
+      "weight": "400",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Oswald",
+      "weight": "400",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Oswald Fallback",
+      "weight": "normal",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Oswald",
+      "weight": "400",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Oswald",
+      "weight": "400",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Oswald",
+      "weight": "400",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Oswald",
+      "weight": "400",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Oswald",
+      "weight": "400",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Oswald Fallback",
+      "weight": "normal",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Oswald",
+      "weight": "200",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Oswald",
+      "weight": "200",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Oswald",
+      "weight": "200",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Oswald",
+      "weight": "200",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Oswald",
+      "weight": "200",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Oswald",
+      "weight": "300",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Oswald",
+      "weight": "300",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Oswald",
+      "weight": "300",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Oswald",
+      "weight": "300",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Oswald",
+      "weight": "300",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Oswald",
+      "weight": "400",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Oswald",
+      "weight": "400",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Oswald",
+      "weight": "400",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Oswald",
+      "weight": "400",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Oswald",
+      "weight": "400",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Oswald",
+      "weight": "500",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Oswald",
+      "weight": "500",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Oswald",
+      "weight": "500",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Oswald",
+      "weight": "500",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Oswald",
+      "weight": "500",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Oswald",
+      "weight": "600",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Oswald",
+      "weight": "600",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Oswald",
+      "weight": "600",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Oswald",
+      "weight": "600",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Oswald",
+      "weight": "600",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Oswald",
+      "weight": "700",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Oswald",
+      "weight": "700",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Oswald",
+      "weight": "700",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Oswald",
+      "weight": "700",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Oswald",
+      "weight": "700",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Poppins",
+      "weight": "100",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Poppins",
+      "weight": "100",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Poppins",
+      "weight": "100",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Poppins",
+      "weight": "200",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Poppins",
+      "weight": "200",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Poppins",
+      "weight": "200",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Poppins",
+      "weight": "300",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Poppins",
+      "weight": "300",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Poppins",
+      "weight": "300",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Poppins",
+      "weight": "400",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Poppins",
+      "weight": "400",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Poppins",
+      "weight": "400",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Poppins",
+      "weight": "500",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Poppins",
+      "weight": "500",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Poppins",
+      "weight": "500",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Poppins",
+      "weight": "600",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Poppins",
+      "weight": "600",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Poppins",
+      "weight": "600",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Poppins",
+      "weight": "700",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Poppins",
+      "weight": "700",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Poppins",
+      "weight": "700",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Poppins",
+      "weight": "800",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Poppins",
+      "weight": "800",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Poppins",
+      "weight": "800",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Poppins",
+      "weight": "900",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Poppins",
+      "weight": "900",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Poppins",
+      "weight": "900",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Poppins-Klaviyo-Hosted",
+      "weight": "400",
+      "style": "italic",
+      "status": "unloaded"
+    },
+    {
+      "family": "Poppins-Klaviyo-Hosted",
+      "weight": "700",
+      "style": "italic",
+      "status": "unloaded"
+    },
+    {
+      "family": "Poppins-Klaviyo-Hosted",
+      "weight": "400",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Poppins-Klaviyo-Hosted",
+      "weight": "700",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "affirm",
+      "weight": "normal",
+      "style": "normal",
+      "status": "unloaded"
+    }
+  ],
+  "links": [
+    {
+      "rel": "stylesheet",
+      "href": "https://www.eightsleep.com/_next/static/css/e3cc418aacad8c36.css",
+      "as": "",
+      "type": ""
+    },
+    {
+      "rel": "stylesheet",
+      "href": "https://www.eightsleep.com/_next/static/css/6bde47c122730470.css",
+      "as": "",
+      "type": ""
+    },
+    {
+      "rel": "stylesheet",
+      "href": "https://www.eightsleep.com/_next/static/css/6ab00a5cde1d3b4d.css",
+      "as": "",
+      "type": ""
+    },
+    {
+      "rel": "stylesheet",
+      "href": "https://www.eightsleep.com/_next/static/css/d2117cd024969889.css",
+      "as": "",
+      "type": ""
+    },
+    {
+      "rel": "stylesheet",
+      "href": "https://www.eightsleep.com/_next/static/css/66771d4a643a13dd.css",
+      "as": "",
+      "type": ""
+    },
+    {
+      "rel": "stylesheet",
+      "href": "https://www.eightsleep.com/_next/static/css/536329f9783b61d9.css",
+      "as": "",
+      "type": ""
+    },
+    {
+      "rel": "stylesheet",
+      "href": "https://www.eightsleep.com/_next/static/css/903bf37ea50811be.css",
+      "as": "",
+      "type": ""
+    },
+    {
+      "rel": "stylesheet",
+      "href": "https://www.eightsleep.com/_next/static/css/ee09837465d43a15.css",
+      "as": "",
+      "type": ""
+    },
+    {
+      "rel": "stylesheet",
+      "href": "https://www.eightsleep.com/_next/static/css/5862a15d1c95736c.css",
+      "as": "",
+      "type": ""
+    },
+    {
+      "rel": "stylesheet",
+      "href": "https://www.eightsleep.com/_next/static/css/15ff805db295e6fa.css",
+      "as": "",
+      "type": ""
+    },
+    {
+      "rel": "stylesheet",
+      "href": "https://www.eightsleep.com/_next/static/css/2788d51f61cf12a2.css",
+      "as": "",
+      "type": ""
+    },
+    {
+      "rel": "stylesheet",
+      "href": "https://www.eightsleep.com/_next/static/css/d67155845d4c8ebd.css",
+      "as": "",
+      "type": ""
+    },
+    {
+      "rel": "stylesheet",
+      "href": "https://www.eightsleep.com/_next/static/css/69cd711bbbf35f0a.css",
+      "as": "",
+      "type": ""
+    },
+    {
+      "rel": "stylesheet",
+      "href": "https://www.eightsleep.com/_next/static/css/3058d16bc42bc568.css",
+      "as": "",
+      "type": ""
+    },
+    {
+      "rel": "stylesheet",
+      "href": "https://www.eightsleep.com/_next/static/css/5f1886dab34e2584.css",
+      "as": "",
+      "type": ""
+    },
+    {
+      "rel": "stylesheet",
+      "href": "https://www.eightsleep.com/_next/static/css/d30b997e41809474.css",
+      "as": "",
+      "type": ""
+    },
+    {
+      "rel": "stylesheet",
+      "href": "https://www.eightsleep.com/_next/static/css/2306be42693945b7.css",
+      "as": "",
+      "type": ""
+    },
+    {
+      "rel": "stylesheet",
+      "href": "https://www.eightsleep.com/_next/static/css/9926d5c7e0d6341b.css",
+      "as": "",
+      "type": ""
+    },
+    {
+      "rel": "stylesheet",
+      "href": "file:///clone.css",
+      "as": "",
+      "type": ""
+    }
+  ],
+  "stylesheets": [
+    "https://www.eightsleep.com/_next/static/css/e3cc418aacad8c36.css",
+    "https://www.eightsleep.com/_next/static/css/6bde47c122730470.css",
+    "https://www.eightsleep.com/_next/static/css/6ab00a5cde1d3b4d.css",
+    "https://www.eightsleep.com/_next/static/css/d2117cd024969889.css",
+    "https://www.eightsleep.com/_next/static/css/66771d4a643a13dd.css",
+    "https://www.eightsleep.com/_next/static/css/536329f9783b61d9.css",
+    "https://www.eightsleep.com/_next/static/css/903bf37ea50811be.css",
+    "https://www.eightsleep.com/_next/static/css/ee09837465d43a15.css",
+    "https://www.eightsleep.com/_next/static/css/5862a15d1c95736c.css",
+    "https://www.eightsleep.com/_next/static/css/15ff805db295e6fa.css",
+    "https://www.eightsleep.com/_next/static/css/2788d51f61cf12a2.css",
+    "https://www.eightsleep.com/_next/static/css/d67155845d4c8ebd.css",
+    "https://www.eightsleep.com/_next/static/css/69cd711bbbf35f0a.css",
+    "https://www.eightsleep.com/_next/static/css/3058d16bc42bc568.css",
+    "https://www.eightsleep.com/_next/static/css/5f1886dab34e2584.css",
+    "https://www.eightsleep.com/_next/static/css/d30b997e41809474.css",
+    "https://www.eightsleep.com/_next/static/css/2306be42693945b7.css",
+    "https://www.eightsleep.com/_next/static/css/9926d5c7e0d6341b.css",
+    "file:///clone.css"
+  ],
+  "images": [],
+  "videos": [],
+  "backgrounds": [],
+  "interactive": [],
+  "samples": [
+    {
+      "selector": "h2",
+      "text": "Application error: a client-side exception has occurred while loading (see the browser console for more information).",
+      "rect": {
+        "x": 345.296875,
+        "y": 436,
+        "width": 749.40625,
+        "height": 28
+      },
+      "styles": {
+        "fontFamily": "system-ui, \"Segoe UI\", Roboto, Helvetica, Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\"",
+        "fontSize": "14px",
+        "fontWeight": "400",
+        "lineHeight": "28px",
+        "letterSpacing": "normal",
+        "color": "rgb(0, 0, 0)",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "backgroundImage": "none",
+        "padding": "0px",
+        "margin": "0px 8px",
+        "width": "749.406px",
+        "height": "28px",
+        "maxWidth": "none",
+        "minHeight": "0px",
+        "display": "block",
+        "flexDirection": "row",
+        "justifyContent": "normal",
+        "alignItems": "normal",
+        "gap": "normal",
+        "gridTemplateColumns": "none",
+        "borderRadius": "0px",
+        "border": "0px solid rgb(0, 0, 0)",
+        "boxShadow": "none",
+        "position": "static",
+        "top": "auto",
+        "right": "auto",
+        "bottom": "auto",
+        "left": "auto",
+        "zIndex": "auto",
+        "opacity": "1",
+        "transform": "none",
+        "transition": "all",
+        "overflow": "visible",
+        "objectFit": "fill",
+        "objectPosition": "50% 50%",
+        "filter": "none",
+        "backdropFilter": "none"
+      }
+    }
+  ],
+  "topLevel": []
+}
