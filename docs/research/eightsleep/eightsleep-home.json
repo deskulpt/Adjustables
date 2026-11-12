@@ -237,7 +237,7 @@
   ],
   "images": [
     {
-      "src": "http://localhost:3000/assets/sleepsoul-logo.png",
+      "src": "http://localhost:3000/assets/sleepsoul-logo.svg",
       "alt": "SleepSoul Canada",
       "width": 600,
       "height": 115,
@@ -952,7 +952,7 @@
       }
     },
     {
-      "src": "http://localhost:3000/assets/sleepsoul-logo.png",
+      "src": "http://localhost:3000/assets/sleepsoul-logo.svg",
       "alt": "SleepSoul",
       "width": 600,
       "height": 115,
