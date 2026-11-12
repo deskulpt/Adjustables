@@ -24,11 +24,18 @@ npm start     # http://localhost:3000
 npm test      # structural self-check
 npm run build # regenerate pages from templates
 npm run capture:dossier   # optional; requires Playwright for screenshots
+npm run capture:articulation-gif   # optional; articulation demo GIF for README
 ```
 
 ## Visual preview
 
 Desktop captures at **1440×900** from `npm start` on `main`. Regenerate with `npm run capture:dossier` (see dossier doc).
+
+### Articulation meter (GSAP-smoothed presets)
+
+Four real-world bed positions — head and foot hinge from a **flat midline baseline** (Flat, TV / Read, Zero-G, Anti-Snore):
+
+![Articulation meter cycling through four adjustable-bed presets with head and foot sections lifting from a center hinge](docs/screenshots/articulation-meter.gif)
 
 ### Homepage — hero & brand
 
