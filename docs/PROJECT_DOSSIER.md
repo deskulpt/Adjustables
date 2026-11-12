@@ -89,7 +89,7 @@ GSAP is **additive** — core UX works with CSS transitions and `.is-visible` cl
 
 ### Module: articulation meter (`initMeters()`)
 
-- **CSS hinge model** — head/foot planks pivot from a center waist line on a flat baseline; four presets (Flat, TV, Zero-G, Anti-Snore).
+- **SVG side-view model** — head/foot sections pivot at the waist on a flat floor line; positive presets lift the head end and foot end **upward** (see `docs/design-references/adjustable-bed-side-view-reference.svg`).
 - **GSAP** — tweened `--head-angle` / `--foot-angle` with `power2.inOut` when presets change (reduced-motion uses instant CSS).
 - **Teaching interaction** for adjustable-bed value prop.
 - **Capture:** [08-articulation-meter-zero-g.png](dossier/08-articulation-meter-zero-g.png).
