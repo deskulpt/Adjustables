@@ -26,16 +26,28 @@
 
 ## Import your local Ultramatic (when newer than archive)
 
-1. From your Mac, push or upload the tree (e.g. zip to `deskulpt-patch-1`, fork `deskulpt/ultramatic`, or attach in chat).
-2. On this repo:
+1. **Push your local latest** (the folder Cloud Agents cannot read on your Mac):
 
 ```bash
-export IMPORT_SOURCE=/path/to/ultramatic   # your extracted tree
-node scripts/import-ultramatic.mjs
+cd /Users/aloke/Repositories/Ultramatic/ultramatic
+git init   # if needed
+git remote add adjustables git@github.com:deskulpt/Adjustables.git
+git checkout -b cursor/ultramatic-source-26d5
+# copy or rsync your site files into the Adjustables layout, or push ultramatic as a subfolder commit
+git push adjustables HEAD:cursor/ultramatic-source-26d5
+```
+
+Or upload a fresh **`ultramatic-local.zip`** on branch `deskulpt-patch-1` (replace the Aug 2026 archive).
+
+2. On the agent VM (or locally in this repo):
+
+```bash
+export IMPORT_SOURCE=/path/to/your/latest/ultramatic
+npm run sync:ultramatic
 npm run build && npm test
 ```
 
-The script copies **core sources only** (`clone.js`, `clone.css`, `site-template.html`, `scripts/build-clone.mjs`) and applies **SleepSoul branding** (names, assets, URLs). Review the diff before commit.
+`sync-from-source.mjs` copies **all pages and assets**, applies **SleepSoul branding**, and **keeps** SleepSoul-only work (SVG articulation meter, CRO PDP, dossier, GIF tooling). The older `import-ultramatic.mjs` still updates only the four core source files.
 
 3. Regenerate marketing assets:
 
