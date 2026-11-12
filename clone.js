@@ -5,6 +5,9 @@
   const asset = (name) => '/assets/' + name;
   const motionEnabled = () => Boolean(window.gsap) && !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+  const FOUNDING_YEAR = 1982;
+  const yearsInBusiness = () => Math.max(0, new Date().getFullYear() - FOUNDING_YEAR);
+
   const states = {
     flat: { label: 'FLAT', head: 0, foot: 0, headValue: '0°', footValue: '0°', copy: 'A familiar starting point for sleeping, stretching out or making the bed.' },
     tv: { label: 'TV / READ', head: 34, foot: 8, headValue: '34°', footValue: '8°', copy: 'Raise your upper body and legs for a more supported angle while reading or watching television.' },
@@ -80,10 +83,10 @@
       '<div class="hero-visual"><div class="hero-image-frame"><video autoplay muted loop playsinline preload="auto" poster="' + asset('sleepsoul-hero.gif') + '" aria-label="SleepSoul adjustable bed moving through a calm bedroom scene"><source src="' + asset('sleepsoul-hero.mp4') + '" type="video/mp4"><img src="' + asset('sleepsoul-hero.gif') + '" alt="A modern bedroom with an adjustable SleepSoul sleep system articulating smoothly"></video><span class="hero-image-tag">A bed that moves around you</span></div><div class="hero-meter-wrap">' + meterMarkup() + '</div></div>',
       '</div></section>',
       '<section class="trust-strip"><div class="container trust-grid">',
-      '<div class="trust-item"><span class="trust-mark">82</span><div><strong>Since 1982</strong><span>Canadian experience</span></div></div>',
-      '<div class="trust-item"><span class="trust-mark">CA</span><div><strong>Canadian company</strong><span>Designed around Canadian homes</span></div></div>',
-      '<div class="trust-item"><span class="trust-mark">↗</span><div><strong>Delivery &amp; setup</strong><span>Human installation support</span></div></div>',
-      '<div class="trust-item"><span class="trust-mark">01</span><div><strong>Real people</strong><span>Phone, video or showroom guidance</span></div></div>',
+      '<div class="trust-item"><span class="trust-mark trust-mark-maple" aria-hidden="true"><span class="icon icon-maple"></span></span><div><strong>Since ' + FOUNDING_YEAR + '</strong><span><span data-trust-years>' + yearsInBusiness() + '</span> years · Canadian experience</span></div></div>',
+      '<div class="trust-item"><span class="trust-mark"><span class="icon icon-flag-ca" aria-hidden="true"></span></span><div><strong>Canadian company</strong><span>Designed around Canadian homes</span></div></div>',
+      '<div class="trust-item"><span class="trust-mark"><span class="icon icon-truck" aria-hidden="true"></span></span><div><strong>Delivery &amp; setup</strong><span>Human installation support</span></div></div>',
+      '<div class="trust-item"><span class="trust-mark"><span class="icon icon-person" aria-hidden="true"></span></span><div><strong>Real people</strong><span>Phone, video or showroom guidance</span></div></div>',
       '</div></section>',
       '<section class="section" id="why-sleepsoul"><div class="container"><div class="section-heading"><div><span class="eyebrow">Start with one question</span><h2>What would you like to change?</h2></div><p>Choose the closest starting point. You can always explore the details later.</p></div>',
       '<div class="home-choice-grid">',
@@ -100,9 +103,9 @@
       '<a class="need-card" href="/sleep-better/independence/"><span class="need-number">F</span><div><h3>Caring for a parent</h3><p>Practical guidance for making everyday movement easier at home.</p></div><span class="need-arrow">↗</span></a>',
       '</div></details></div></section>',
       '<section class="section solutions"><div class="container"><div class="section-heading"><div><span class="eyebrow">Three ways forward</span><h2>One bedroom. Different needs.</h2></div><p>A clearer starting point than model names — then the right product when you’re ready.</p></div><div class="solution-grid">',
-      '<article class="solution-card solution-card-image" data-reveal><img src="' + asset('solace-package.jpg') + '" alt="SleepSoul adjustable sleep system for everyday comfort"><div class="solution-card-overlay"><span class="solution-index">01 · LIFESTYLE</span><h3>Comfort that moves with you.</h3><p>For reading, relaxing, television and everyday adjustable comfort.</p><div class="solution-list"><span>Reading</span><span>Relaxing</span><span>TV</span></div>', textLink('Explore Lifestyle', '/shop/adjustable-beds/'), '</div></article>',
-      '<article class="solution-card solution-card-image" data-reveal="delay-1"><img src="' + asset('sleepsoul-system-4k.png') + '" alt="SleepSoul adjustable bed moving into a supported position"><div class="solution-card-overlay"><span class="solution-index">02 · THERAPY</span><h3>More control over how you rest.</h3><p>For back comfort, reflux, snoring and the positions you return to.</p><div class="solution-list"><span>Position</span><span>Pressure</span><span>Independent sides</span></div>', textLink('Explore Therapy', '/shop/adjustable-beds/'), '</div></article>',
-      '<article class="solution-card solution-card-image" data-reveal="delay-2"><img src="' + asset('hi-low-bed.jpg') + '" alt="SleepSoul Hi-Low bed supporting easier movement at home"><div class="solution-card-overlay"><span class="solution-index">03 · INDEPENDENCE</span><h3>Make everyday movement easier.</h3><p>For transfers, height adjustment, caregiver support and life at home.</p><div class="solution-list"><span>Transfers</span><span>Hi-Low</span><span>Home support</span></div>', textLink('Explore Independence', '/sleep-better/independence/'), '</div></article>',
+      '<article class="solution-card solution-card-image" data-reveal><img src="' + asset('solace-package.jpg') + '" alt="SleepSoul adjustable sleep system for everyday comfort"><div class="solution-card-overlay"><span class="solution-index">01 · LIFESTYLE</span><h3>Comfort that moves with you.</h3><p>For reading, relaxing, television and everyday adjustable comfort.</p><div class="solution-list"><span class="solution-chip"><span class="icon icon-line" aria-hidden="true"></span>Reading</span><span class="solution-chip"><span class="icon icon-line" aria-hidden="true"></span>Relaxing</span><span class="solution-chip"><span class="icon icon-line" aria-hidden="true"></span>TV</span></div>', textLink('Explore Lifestyle', '/shop/adjustable-beds/'), '</div></article>',
+      '<article class="solution-card solution-card-image" data-reveal="delay-1"><img src="' + asset('sleepsoul-system-4k.png') + '" alt="SleepSoul adjustable bed moving into a supported position"><div class="solution-card-overlay"><span class="solution-index">02 · THERAPY</span><h3>More control over how you rest.</h3><p>For back comfort, reflux, snoring and the positions you return to.</p><div class="solution-list"><span class="solution-chip"><span class="icon icon-line" aria-hidden="true"></span>Position</span><span class="solution-chip"><span class="icon icon-line" aria-hidden="true"></span>Pressure</span><span class="solution-chip"><span class="icon icon-line" aria-hidden="true"></span>Independent sides</span></div>', textLink('Explore Therapy', '/shop/adjustable-beds/'), '</div></article>',
+      '<article class="solution-card solution-card-image" data-reveal="delay-2"><img src="' + asset('hi-low-bed.jpg') + '" alt="SleepSoul Hi-Low bed supporting easier movement at home"><div class="solution-card-overlay"><span class="solution-index">03 · INDEPENDENCE</span><h3>Make everyday movement easier.</h3><p>For transfers, height adjustment, caregiver support and life at home.</p><div class="solution-list"><span class="solution-chip"><span class="icon icon-line" aria-hidden="true"></span>Transfers</span><span class="solution-chip"><span class="icon icon-line" aria-hidden="true"></span>Hi-Low</span><span class="solution-chip"><span class="icon icon-line" aria-hidden="true"></span>Home support</span></div>', textLink('Explore Independence', '/sleep-better/independence/'), '</div></article>',
       '</div></div></section>',
       '<section class="section engineering"><div class="container engineering-grid"><div class="engineering-copy" data-reveal><span class="eyebrow">Under the mattress</span><h2>A bed should do more than go up and down.</h2><p>We’ve spent decades thinking about what happens underneath the mattress — the motor, pivot geometry, controls and the small details that change how a bed feels in real life.</p>', textLink('See how SleepSoul bases are built', '/shop/adjustable-beds/'), '</div><div class="engineering-visual" data-reveal="delay-1"><img src="' + asset('sleepsoul-system-4k.png') + '" alt="Close view of an SleepSoul adjustable bed in a raised position"><div class="engineering-image-scrim"></div><button class="hotspot is-active" type="button" data-hotspot="motor" aria-label="Show motor and control details">+</button><button class="hotspot" type="button" data-hotspot="pivot" aria-label="Show pivot geometry details">+</button><button class="hotspot" type="button" data-hotspot="remote" aria-label="Show remote and presets details">+</button><div class="hotspot-label" data-hotspot-label><strong>Motor + control</strong>Quiet, considered movement from a system built to be used every day.</div></div></div></section>',
       '<section class="section-tight motion-section"><div class="container"><div class="section-heading"><div><span class="eyebrow">Precision in motion</span><h2>Notice what changes underneath.</h2></div><p>Scroll into the scene. Each marker and card arrives like a measured adjustment — the bed is the animation.</p></div><div class="motion-stage" data-motion-scene><div class="motion-card"><small>POSITION 01</small><strong>Head control</strong></div><div class="motion-card"><small>POSITION 02</small><strong>Independent sides</strong></div><div class="motion-card"><small>POSITION 03</small><strong>Leg elevation</strong></div><div class="motion-card"><small>POSITION 04</small><strong>Quiet lift</strong></div><div class="motion-floor"></div><div class="motion-axis"></div><span class="motion-marker marker-1"></span><span class="motion-marker marker-2"></span><span class="motion-marker marker-3"></span><span class="motion-marker marker-4"></span></div></div></section>',
@@ -150,9 +153,26 @@
     ].join('');
   }
 
+  function renderPdpCro() {
+    return [
+      '<div class="pdp-promo-banner" data-reveal aria-label="Prototype promotion"><strong>Dream Comfort event</strong><span>Prototype promo callouts · verify live pricing before launch</span></div>',
+      '<section class="pdp-top pdp-cro"><div class="container pdp-layout"><div class="pdp-gallery" data-reveal><div class="pdp-main-image"><img data-gallery-main src="' + asset('postureplus-package.webp') + '" alt="SleepSoul PosturePlus 4.5 adjustable base"><span class="gallery-label promo-ribbon">Therapy series · featured</span></div></div>',
+      '<div class="pdp-panel pdp-cro-buybox" data-reveal="delay-1"><span class="eyebrow">THERAPY SERIES</span><h1>PosturePlus 4.5</h1><p>Conversion-focused buy box prototype — same product story as the standard PDP, with clearer trust signals up front.</p>',
+      '<div class="pdp-rating"><strong>★★★★★</strong><span>Public reviews · <span data-trust-years>' + yearsInBusiness() + '</span> years helping Canadians choose</span></div>',
+      '<div class="purchase-card purchase-card-cro"><div class="purchase-row"><strong class="purchase-price">$1,098</strong><span class="purchase-note">TXL starting point · verify live</span></div>',
+      '<div class="cro-trust-strip"><span>Free fit call</span><span>Delivery explained upfront</span><span>25-year warranty listed</span></div>',
+      '<div class="purchase-actions">', button('Add to cart', '#', 'brass'), button('Call 1-800-373-8887', 'tel:+18003738887', 'outline'), '</div>',
+      '<p class="purchase-help">Standard product page: <a href="/products/postureplus-4-5/">PosturePlus 4.5 full details →</a></p></div></div></div></section>',
+      '<section class="section articulation-section" id="articulation-demo"><div class="container articulation-grid"><div class="articulation-copy" data-reveal><span class="eyebrow">Articulation meter</span><h2>Head and foot rise on their joints — the middle stays on the base.</h2><p>Four presets on a split base: fixed middle deck, head and foot sections each pivot at their own hinge.</p></div><div class="articulation-meter-wrap" data-reveal="delay-1">' + meterMarkup() + '</div></div></section>',
+      '<section class="section-tight"><div class="container fit-grid"><div class="fit-copy"><span class="eyebrow">FitCheck</span><h2>Will your current mattress work?</h2><p>Start with mattress type before you add the base to cart.</p></div><div class="fit-card" data-fitcheck data-reveal="delay-1"><h3>FitCheck</h3><label for="cro-mattress-type">Mattress type</label><select id="cro-mattress-type" data-fit-type><option value="memory">Memory foam</option><option value="hybrid">Hybrid</option><option value="latex">Latex</option><option value="spring">Traditional innerspring</option><option value="unknown">I’m not sure</option></select><div class="fit-result"><span class="fit-status" data-fit-status></span><div><strong data-fit-title>LIKELY COMPATIBLE</strong><p data-fit-copy>Select your mattress details to see the starting explanation.</p></div></div></div></div></section>'
+    ].join('');
+  }
+
   function renderFinder() {
     return [
-      '<section class="finder"><div class="container finder-shell"><div class="finder-intro"><div><span class="eyebrow">A calmer way to choose</span><h1>Find Your Bed</h1><p>Five questions. No email required. We’ll show you what we recommend — and why.</p></div><div class="finder-progress" data-finder-progress><span class="progress-step is-active"></span><span class="progress-step"></span><span class="progress-step"></span><span class="progress-step"></span><span class="progress-step"></span></div></div><div class="finder-card" data-finder><div data-finder-screen="intro"><span class="result-tag">START HERE</span><h2>Tell us what you want to change.</h2><p style="color:var(--overcast);max-width:520px">Your answers shape a short recommendation — not twelve products and a hard sell.</p><div class="finder-footer"><span class="finder-count">About 2 minutes · No email required</span><button class="button button-brass" type="button" data-finder-start>Begin <span>→</span></button></div></div></div></div></section>'
+      '<section class="finder"><div class="container finder-shell"><div class="finder-intro"><div><span class="eyebrow">A calmer way to choose</span><h1>Find Your Bed</h1><p>Five questions. No email required. We’ll show you what we recommend — and why.</p></div><div class="finder-progress" data-finder-progress><span class="progress-step is-active"></span><span class="progress-step"></span><span class="progress-step"></span><span class="progress-step"></span><span class="progress-step"></span></div></div>',
+      '<div class="finder-tools" data-reveal><p class="finder-context" data-finder-context hidden aria-live="polite"></p><div class="finder-needs" role="navigation" aria-label="Start from a need"><a href="/find-your-bed/?need=back">Back comfort</a><a href="/find-your-bed/?need=reflux">Reflux</a><a href="/find-your-bed/?need=snoring">Snoring</a><a href="/find-your-bed/?need=mobility">Transfers</a></div><div class="finder-height-teaser"><span class="eyebrow">Bed height</span><p>Transfer height is part of the same conversation. <a href="/sleep-better/independence/#assessment">Try the height guide →</a></p></div></div>',
+      '<div class="finder-card" data-finder><div data-finder-screen="intro"><span class="result-tag">START HERE</span><h2>Tell us what you want to change.</h2><p style="color:var(--overcast);max-width:520px">Your answers shape a short recommendation — not twelve products and a hard sell.</p><div class="finder-footer"><span class="finder-count">About 2 minutes · No email required</span><button class="button button-brass" type="button" data-finder-start>Begin <span>→</span></button></div></div></div></div></section>'
     ].join('');
   }
 
@@ -169,7 +189,7 @@
   function renderSleepBetter() {
     return [
       '<section class="page-hero"><div class="container page-hero-grid"><div><span class="eyebrow">Sleep Better · Editorial library</span><h1>Sleep better. Move easier. Understand your options.</h1><p>Clear, human guides for adjustable beds, health and comfort, independence at home, and mattress compatibility.</p></div><div class="page-hero-note">No jargon first. We answer the practical question, then show the next step.</div></div></section>',
-      '<section class="section-tight"><div class="container"><div class="editorial-grid"><a class="editorial-card" href="/sleep-better/adjustable-beds/"><span class="editorial-index">01 · ADJUSTABLE BEDS</span><h3>What an adjustable bed actually changes.</h3><p>Positions, controls and the details worth testing in person.</p>', textLink('Explore the guide', '/sleep-better/adjustable-beds/'), '</a><a class="editorial-card" href="/sleep-better/health/"><span class="editorial-index">02 · HEALTH &amp; COMFORT</span><h3>Resting positions, explained plainly.</h3><p>Back comfort, reflux, snoring and circulation conversations without overpromising.</p>', textLink('Explore health & comfort', '/sleep-better/health/'), '</a><a class="editorial-card" href="/sleep-better/independence/"><span class="editorial-index">03 · INDEPENDENCE AT HOME</span><h3>Make the everyday movement easier.</h3><p>Hi-Low beds, lift chairs, bed height and caregiver questions.</p>', textLink('Explore independence', '/sleep-better/independence/'), '</a><a class="editorial-card" href="/sleep-better/mattresses/"><span class="editorial-index">04 · MATTRESSES &amp; COMPATIBILITY</span><h3>Will your mattress move with the base?</h3><p>Flex, feel and fit are more useful than a wall of specifications.</p>', textLink('Explore compatibility', '/sleep-better/mattresses/'), '</a></div></div></section>',
+      '<section class="section-tight"><div class="container"><div class="editorial-grid"><a class="editorial-card editorial-card-image" href="/sleep-better/adjustable-beds/"><img src="' + asset('sleepsoul-system-4k.png') + '" alt=""><div class="editorial-card-body"><span class="editorial-index">01 · ADJUSTABLE BEDS</span><h3>What an adjustable bed actually changes.</h3><p>Positions, controls and the details worth testing in person.</p>', textLink('Explore the guide', '/sleep-better/adjustable-beds/'), '</div></a><a class="editorial-card editorial-card-image" href="/sleep-better/health/"><img src="' + asset('postureplus-package.webp') + '" alt=""><div class="editorial-card-body"><span class="editorial-index">02 · HEALTH &amp; COMFORT</span><h3>Resting positions, explained plainly.</h3><p>Back comfort, reflux, snoring and circulation conversations without overpromising.</p>', textLink('Explore health & comfort', '/sleep-better/health/'), '</div></a><a class="editorial-card editorial-card-image" href="/sleep-better/independence/"><img src="' + asset('hi-low-bed.jpg') + '" alt=""><div class="editorial-card-body"><span class="editorial-index">03 · INDEPENDENCE AT HOME</span><h3>Make the everyday movement easier.</h3><p>Hi-Low beds, lift chairs, bed height and caregiver questions.</p>', textLink('Explore independence', '/sleep-better/independence/'), '</div></a><a class="editorial-card editorial-card-image" href="/sleep-better/mattresses/"><img src="' + asset('purcarbon-mattress.jpg') + '" alt=""><div class="editorial-card-body"><span class="editorial-index">04 · MATTRESSES &amp; COMPATIBILITY</span><h3>Will your mattress move with the base?</h3><p>Flex, feel and fit are more useful than a wall of specifications.</p>', textLink('Explore compatibility', '/sleep-better/mattresses/'), '</div></a></div></div></section>',
       '<section class="section section-dark"><div class="container"><div class="section-heading"><div><span class="eyebrow">Start with a question</span><h2>Guides that lead somewhere useful.</h2></div><p>Each article connects to a product interaction, a comparison or a person you can call.</p></div><div class="collection-grid"><article class="product-card"><div class="product-body"><span class="eyebrow">Buying guide</span><h3>Zero Gravity Explained</h3><p>What the position is, what it feels like, and where to try it next.</p>', textLink('Read the guide', '/sleep-better/adjustable-beds/zero-gravity-explained/'), '</div></article><article class="product-card"><div class="product-body"><span class="eyebrow">Compatibility</span><h3>Mattress Flex Rating</h3><p>A simpler way to think about how a mattress articulates.</p>', textLink('Check your fit', '/products/postureplus-4-5/#fitcheck'), '</div></article><article class="product-card"><div class="product-body"><span class="eyebrow">At home</span><h3>Hi-Low Beds Explained</h3><p>When changing the height of the whole bed changes the conversation.</p>', textLink('Read the guide', '/sleep-better/independence/'), '</div></article></div></div></section>'
     ].join('');
   }
@@ -479,7 +499,35 @@
     }));
   }
 
+  function initTrustStrip() {
+    const years = yearsInBusiness();
+    document.querySelectorAll('[data-trust-years]').forEach((node) => { node.textContent = String(years); });
+  }
+
+  function syncCartCount(count) {
+    const total = Number(count) || 0;
+    const label = 'Cart, ' + total + (total === 1 ? ' item' : ' items');
+    document.querySelectorAll('.cart-count').forEach((item) => { item.textContent = String(total); });
+    document.querySelectorAll('.cart-link').forEach((link) => { link.setAttribute('aria-label', label); });
+  }
+
+  function initFinderContext() {
+    const need = new URLSearchParams(window.location.search).get('need');
+    const context = document.querySelector('[data-finder-context]');
+    if (!context || !need) return;
+    const labels = {
+      back: 'Back & joint comfort',
+      reflux: 'Reflux & nighttime comfort',
+      snoring: 'Snoring & partner sleep',
+      mobility: 'Getting in & out of bed',
+      comfort: 'Everyday comfort'
+    };
+    context.textContent = 'Starting from: ' + (labels[need] || need.replace(/-/g, ' '));
+    context.hidden = false;
+  }
+
   function initFinder() {
+    initFinderContext();
     const finder = document.querySelector('[data-finder]');
     if (!finder) return;
     const questions = [
@@ -576,12 +624,12 @@
       event.preventDefault();
       const count = Number(localStorage.getItem('sleepsoul-cart-count') || 0) + 1;
       localStorage.setItem('sleepsoul-cart-count', String(count));
-      document.querySelectorAll('.cart-count').forEach((item) => item.textContent = String(count));
+      syncCartCount(count);
       add.textContent = 'Added · View cart →';
       add.href = '/cart/';
     });
     const count = localStorage.getItem('sleepsoul-cart-count');
-    if (count) document.querySelectorAll('.cart-count').forEach((item) => item.textContent = count);
+    if (count) syncCartCount(count);
   }
 
   function initHeroPanels() {
@@ -684,6 +732,7 @@
     if (page === 'find') return renderFinder;
     if (page === 'compare') return renderCompare;
     if (page === 'product') return () => renderPdp(false);
+    if (page === 'product-cro') return renderPdpCro;
     if (page === 'sleep-system') return () => renderPdp(true);
     if (page === 'independence') return renderIndependence;
     if (page === 'sleep-better' || ['sleep-adjustable', 'sleep-health', 'sleep-mattresses'].includes(page)) return renderSleepBetter;
@@ -700,6 +749,9 @@
   function renderRoute() {
     const renderer = routeRenderer();
     let markup = renderer();
+    if (page === 'product-cro') {
+      document.querySelector('.site-notice')?.classList.add('site-notice-promo');
+    }
     if (page === 'home') {
       const controls = [
         '<div class="hero-hotspots" aria-label="Explore the SleepSoul sleep system">',
@@ -734,9 +786,12 @@
     initHeight();
     initForms();
     initCartActions();
+    initTrustStrip();
   }
 
   initHeader();
+  initTrustStrip();
+  syncCartCount(localStorage.getItem('sleepsoul-cart-count') || 0);
   initSearch();
   if (year) year.textContent = String(new Date().getFullYear());
   renderRoute();

@@ -30,6 +30,7 @@ const pages = [
   ['reviews', 'reviews', 'Reviews | SleepSoul Sleep', 'Read why customers chose SleepSoul for comfort, mobility and everyday life.'],
   ['trade', 'trade', 'Trade In | SleepSoul Sleep', 'Talk to SleepSoul about your next sleep system.'],
   ['product', 'products/postureplus-4-5', 'PosturePlus 4.5 | SleepSoul Sleep', 'A highly adjustable base for more control over position, support and partner comfort.'],
+  ['product-cro', 'products/postureplus-4-5-cro', 'PosturePlus 4.5 CRO | SleepSoul Sleep', 'CRO prototype: PosturePlus 4.5 with promo callouts, trust signals and conversion-focused buy box.'],
   ['sleep-system', 'products/postureplus-system', 'PosturePlus Sleep System | SleepSoul Sleep', 'A complete sleep system designed to move together.'],
   ['cart', 'cart', 'Your Cart | SleepSoul Sleep', 'Review your SleepSoul sleep system and choose how you want to complete your order.']
 ];
