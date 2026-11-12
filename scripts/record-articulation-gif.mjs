@@ -17,15 +17,16 @@ async function main() {
   const page = await browser.newPage({ viewport: { width: 720, height: 420 } });
   await page.goto(`${base}/#articulation-demo`, { waitUntil: 'networkidle' });
   await page.locator('#articulation-demo').scrollIntoViewIfNeeded();
-  await page.waitForTimeout(600);
+  await page.waitForTimeout(800);
 
   const tabs = ['Flat', 'TV', 'Zero-G', 'Anti-Snore'];
+  const settleMs = 1100; // GSAP rotation duration is 0.85s — capture after hinge motion finishes
   let frame = 0;
 
   for (let cycle = 0; cycle < 2; cycle += 1) {
     for (const tab of tabs) {
       await page.getByRole('tab', { name: tab }).click();
-      await page.waitForTimeout(950);
+      await page.waitForTimeout(settleMs);
       const shot = join(framesDir, `frame-${String(frame).padStart(3, '0')}.png`);
       await page.locator('#articulation-demo .articulation-meter').screenshot({ path: shot });
       frame += 1;
