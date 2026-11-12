@@ -7,7 +7,9 @@ This repository is **proprietary**. The concept, visual theme, page architecture
 ## Highlights
 
 - Multi-page static site (home, shop categories, product detail, sleep education, showroom, cart, and support pages)
-- Shared shell template, design tokens, and interactive homepage sections (articulation meter, fit check, hotspots)
+- Shared shell template, design tokens, and interactive homepage sections (split-base articulation meter, fit check, hotspots)
+- Sitewide **cart icon** nav, **trust strip** (maple + years since 1982), **Sleep Better** editorial cards, and **Find Your Bed** needs/height shortcuts
+- CRO prototype PDP at `/products/postureplus-4-5-cro/` (promo buy box + articulation meter)
 - Asset pipeline and local static server for development and QA
 - Research and design-reference docs under `docs/`
 - **Project dossier** (objectives, GSAP modules, motion map): [docs/PROJECT_DOSSIER.md](docs/PROJECT_DOSSIER.md)
@@ -24,7 +26,15 @@ npm start     # http://localhost:3000
 npm test      # structural self-check
 npm run build # regenerate pages from templates
 npm run capture:dossier   # optional; requires Playwright for screenshots
-npm run capture:articulation-gif   # optional; articulation demo GIF for README
+npm run capture:articulation-gif   # optional; articulation demo GIF for README (needs Playwright)
+```
+
+Regenerate the articulation GIF after meter changes:
+
+```bash
+npm start   # in another terminal
+PROJECT_ROOT=$PWD node scripts/record-articulation-gif.mjs
+# or: npm run capture:articulation-gif (with Playwright installed)
 ```
 
 ## Visual preview
@@ -35,7 +45,9 @@ Desktop captures at **1440×900** from `npm start` on `main`. Regenerate with `n
 
 Four presets on a **split base** — head and foot sections lift on their **hinge joints**; the **middle deck stays flat** on the base (four joint markers: head end, head hinge, foot hinge, foot end):
 
-![Articulation meter cycling through four adjustable-bed presets with head and foot sections lifting from a center hinge](docs/screenshots/articulation-meter.gif)
+![Articulation meter cycling Flat, TV, Zero-G, and Anti-Snore presets — head and foot rise on separate hinges while the middle stays on the base](docs/screenshots/articulation-meter.gif)
+
+Live: [homepage `#articulation-demo`](http://127.0.0.1:3000/#articulation-demo) · [CRO PDP](http://127.0.0.1:3000/products/postureplus-4-5-cro/#articulation-demo) when `npm start` is running.
 
 ### Homepage — hero & brand
 
@@ -59,7 +71,7 @@ Four presets on a **split base** — head and foot sections lift on their **hing
 
 ![Hero detail panel with GSAP fade and articulation meter — Zero-G position](docs/dossier/07-gsap-hero-detail-panel.png)
 
-![Articulation meter teaching control: head and foot angles](docs/dossier/08-articulation-meter-zero-g.png)
+![Articulation meter — split-base head and foot angles (Zero-G)](docs/dossier/08-articulation-meter-zero-g.png)
 
 ### Social proof & funnel pages
 
@@ -85,6 +97,8 @@ Four presets on a **split base** — head and foot sections lift on their **hing
 | `scripts/` | Dev server, build, and QA scripts |
 | `docs/research/` | Page specs and behavior notes |
 | `docs/dossier/` | Full-page and interaction screenshots |
+| `docs/screenshots/articulation-meter.gif` | Latest articulation preset loop (regenerate via script above) |
+| `products/postureplus-4-5-cro/` | Conversion-focused PDP prototype |
 
 ## Commercial use
 
