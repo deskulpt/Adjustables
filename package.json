@@ -5,6 +5,7 @@
   "scripts": {
     "build": "node scripts/build-clone.mjs",
     "test": "node scripts/self-check.mjs",
-    "start": "node scripts/server.mjs"
+    "start": "node scripts/server.mjs",
+    "capture:dossier": "node scripts/capture-dossier.mjs"
   }
 }
