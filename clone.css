@@ -484,6 +484,7 @@ h3 { font-size: clamp(25px, 2vw, 34px); line-height: 1.04; letter-spacing: -.025
 .site-footer { color: var(--bone); background: var(--nightfall); }
 .footer-top { display: grid; grid-template-columns: 1.4fr repeat(3, 1fr); gap: 34px; max-width: var(--container); margin: 0 auto; padding: 70px 28px 60px; }
 .footer-lead img { width: 164px; height: 44px; object-fit: contain; object-position: left; filter: brightness(0) invert(1); }
+.footer-lead img.footer-logo { filter: none; width: 180px; }
 .footer-lead p { max-width: 300px; margin: 22px 0; color: rgba(251,250,248,.68); font-size: 15px; }
 .footer-phone { display: inline-flex; gap: 8px; color: var(--lamplight); font-size: 17px; }
 .footer-column .menu-label { color: rgba(251,250,248,.48); }

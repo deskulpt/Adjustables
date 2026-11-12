@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 196 40" role="img" aria-labelledby="sleepsoul-logo-title">
+  <title id="sleepsoul-logo-title">SleepSoul</title>
+  <path fill="#101b2b" d="M19.5 6.5a13.5 13.5 0 1 0 11 22.1 10.5 10.5 0 1 1-11-22.1Z"/>
+  <circle cx="31" cy="10.5" r="2.75" fill="#2c6fa8"/>
+  <text x="42" y="27.5" font-family="Poppins, 'Helvetica Neue', Arial, sans-serif" font-size="21" font-weight="600" letter-spacing="-0.02em">
+    <tspan fill="#101b2b">Sleep</tspan><tspan fill="#2c6fa8">Soul</tspan>
+  </text>
+</svg>
