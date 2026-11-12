@@ -162,9 +162,11 @@ h3 { font-size: clamp(25px, 2vw, 34px); line-height: 1.04; letter-spacing: -.025
 .bed-diagram-svg { display: block; }
 .bed-diagram-svg .bed-floor { stroke: rgba(16,27,43,.55); stroke-width: 2; }
 .bed-diagram-svg .bed-floor-label { fill: var(--overcast); font-family: var(--sans); font-size: 9px; letter-spacing: .08em; text-transform: uppercase; }
-.bed-diagram-svg .bed-waist { fill: var(--bone); stroke: var(--lamplight); stroke-width: 2; }
+.bed-diagram-svg .bed-base-deck { fill: #101b2b; opacity: 0.88; }
+.bed-diagram-svg .bed-middle { fill: #e4ddd1; stroke: #101b2b; stroke-width: 1.1; }
 .bed-diagram-svg .bed-mattress { fill: #f4efe6; stroke: #101b2b; stroke-width: 1.1; }
-.bed-diagram-svg .bed-end { fill: var(--signal); }
+.bed-diagram-svg .bed-joint { fill: var(--signal); }
+.bed-diagram-svg .bed-joint-hinge { fill: var(--bone); stroke: var(--lamplight); stroke-width: 2; }
 .bed-diagram-svg .bed-head-group,
 .bed-diagram-svg .bed-foot-group { transform-box: fill-box; transform-origin: 0 0; }
 .articulation-section { background: var(--linen); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }

@@ -31,18 +31,23 @@
       '<div class="articulation-meter" data-articulation tabindex="0" aria-label="Adjustable bed articulation meter. Use the arrow keys to change position.">',
       '<div class="meter-header"><p>ARTICULATION METER</p><strong data-meter-label>FLAT</strong></div>',
       '<div class="bed-diagram" data-bed-diagram>',
-      '<svg class="bed-diagram-svg" viewBox="0 0 300 118" width="100%" height="118" aria-hidden="true" focusable="false">',
-      '<line class="bed-floor" x1="12" y1="94" x2="288" y2="94"/>',
-      '<text class="bed-floor-label" x="150" y="112" text-anchor="middle">Flat baseline</text>',
-      '<g class="bed-pivot-group" transform="translate(150 94)">',
-      '<circle class="bed-waist" r="5.5"/>',
+      '<svg class="bed-diagram-svg" viewBox="0 0 300 124" width="100%" height="124" aria-hidden="true" focusable="false">',
+      '<line class="bed-floor" x1="12" y1="92" x2="288" y2="92"/>',
+      '<text class="bed-floor-label" x="150" y="118" text-anchor="middle">Base deck (middle stays flat)</text>',
+      '<rect class="bed-base-deck" x="108" y="84" width="84" height="8" rx="1"/>',
+      '<rect class="bed-middle" data-bed-middle x="108" y="76" width="84" height="16" rx="2"/>',
+      '<g transform="translate(108 92)">',
       '<g class="bed-head-group" data-bed-head transform="rotate(0)">',
-      '<path class="bed-mattress" d="M -134 0 H 0 V -20 H -134 Z"/>',
-      '<circle class="bed-end bed-end-head" cx="-134" cy="-10" r="4.5"/>',
+      '<path class="bed-mattress" d="M -84 0 H 0 V -16 H -84 Z"/>',
+      '<circle class="bed-joint bed-joint-head" cx="-84" cy="-8" r="4.5"/>',
+      '<circle class="bed-joint bed-joint-hinge" cx="0" cy="0" r="5.5"/>',
       '</g>',
+      '</g>',
+      '<g transform="translate(192 92)">',
       '<g class="bed-foot-group" data-bed-foot transform="rotate(0)">',
-      '<path class="bed-mattress" d="M 0 0 H 134 V -20 H 0 Z"/>',
-      '<circle class="bed-end bed-end-foot" cx="134" cy="-10" r="4.5"/>',
+      '<path class="bed-mattress" d="M 0 0 H 84 V -16 H 0 Z"/>',
+      '<circle class="bed-joint bed-joint-foot" cx="84" cy="-8" r="4.5"/>',
+      '<circle class="bed-joint bed-joint-hinge" cx="0" cy="0" r="5.5"/>',
       '</g>',
       '</g>',
       '</svg>',
@@ -707,7 +712,7 @@
       markup = markup.replace('<div class="hero-meter-wrap">' + meterMarkup() + '</div>', '');
       const overlap = '<section class="hero-overlap"><div class="container"><div class="overlap-intro"><span class="eyebrow">One system · more ways to rest</span><h2>Designed around the way you sleep, move and live at home.</h2><p>From a calmer bedtime position to an easier morning, SleepSoul helps you understand the whole sleep system.</p><a class="button button-dark" href="/find-your-bed/">Find your best fit <span>→</span></a></div><div class="overlap-bento"><article><div class="overlap-card-media"><img src="' + asset('sleepsoul-system-4k.png') + '" alt="SleepSoul adjustable bed in a raised position"></div><div class="overlap-card-copy"><span>01</span><strong>Adjust the angle</strong><p>Find a position that feels right for reading, resting or winding down.</p></div></article><article><div class="overlap-card-media"><img src="' + asset('postureplus-package.webp') + '" alt="SleepSoul PosturePlus sleep system"></div><div class="overlap-card-copy"><span>02</span><strong>Check the fit</strong><p>Choose the mattress and base as one considered system.</p></div></article><article><div class="overlap-card-media"><img src="' + asset('hi-low-bed.jpg') + '" alt="SleepSoul Hi-Low bed"></div><div class="overlap-card-copy"><span>03</span><strong>Talk it through</strong><p>Get delivery, setup and human guidance before you decide.</p></div></article></div></div></section>';
       const interactive = '<section class="section system-interactive" aria-labelledby="system-interactive-title"><div class="container"><div class="system-heading"><div><span class="eyebrow">Explore one part at a time</span><h2 id="system-interactive-title">See what moves.</h2></div><p>Choose one point to learn what changes. Close the panel when you’re ready to return to the image.</p></div><div class="system-stage" data-system-stage><img src="' + asset('sleepsoul-system-4k.png') + '" alt="A clean SleepSoul adjustable bed moving into a supported position"><span class="system-stage-label">Tap one point to learn more</span>' + controls + '</div></div></section>';
-      const articulationDemo = '<section class="section articulation-section" id="articulation-demo"><div class="container articulation-grid"><div class="articulation-copy" data-reveal><span class="eyebrow">Articulation meter</span><h2>Head and foot move from a level midline — like a real base.</h2><p>Four everyday presets show how each section hinges at the waist and lifts independently from a flat baseline.</p></div><div class="articulation-meter-wrap" data-reveal="delay-1">' + meterMarkup() + '</div></div></section>';
+      const articulationDemo = '<section class="section articulation-section" id="articulation-demo"><div class="container articulation-grid"><div class="articulation-copy" data-reveal><span class="eyebrow">Articulation meter</span><h2>Head and foot rise on their joints — the middle stays on the base.</h2><p>Four presets show a real split base: head section, fixed mid deck, foot section, each with an outer end and a hinge (four joint points).</p></div><div class="articulation-meter-wrap" data-reveal="delay-1">' + meterMarkup() + '</div></div></section>';
       markup = markup.replace('<section class="trust-strip"', overlap + interactive + articulationDemo + '<section class="trust-strip"');
       const reviewStart = markup.indexOf('<section class="section review-section">');
       if (reviewStart >= 0) {
