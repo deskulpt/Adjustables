@@ -30,15 +30,22 @@
     return [
       '<div class="articulation-meter" data-articulation tabindex="0" aria-label="Adjustable bed articulation meter. Use the arrow keys to change position.">',
       '<div class="meter-header"><p>ARTICULATION METER</p><strong data-meter-label>FLAT</strong></div>',
-      '<div class="bed-diagram" data-bed-diagram style="--head-angle:0;--foot-angle:0">',
-      '<div class="bed-baseline" aria-hidden="true"></div>',
-      '<div class="bed-platform" data-bed-platform>',
-      '<div class="bed-plank bed-head" data-bed-head></div>',
-      '<div class="bed-plank bed-foot" data-bed-foot></div>',
-      '</div>',
-      '<div class="bed-hinge bed-hinge-mid" aria-hidden="true"></div>',
-      '<span class="bed-pivot bed-pivot-head" aria-hidden="true"></span>',
-      '<span class="bed-pivot bed-pivot-foot" aria-hidden="true"></span>',
+      '<div class="bed-diagram" data-bed-diagram>',
+      '<svg class="bed-diagram-svg" viewBox="0 0 300 118" width="100%" height="118" aria-hidden="true" focusable="false">',
+      '<line class="bed-floor" x1="12" y1="94" x2="288" y2="94"/>',
+      '<text class="bed-floor-label" x="150" y="112" text-anchor="middle">Flat baseline</text>',
+      '<g class="bed-pivot-group" transform="translate(150 94)">',
+      '<circle class="bed-waist" r="5.5"/>',
+      '<g class="bed-head-group" data-bed-head transform="rotate(0)">',
+      '<path class="bed-mattress" d="M -134 0 H 0 V -20 H -134 Z"/>',
+      '<circle class="bed-end bed-end-head" cx="-134" cy="-10" r="4.5"/>',
+      '</g>',
+      '<g class="bed-foot-group" data-bed-foot transform="rotate(0)">',
+      '<path class="bed-mattress" d="M 0 0 H 134 V -20 H 0 Z"/>',
+      '<circle class="bed-end bed-end-foot" cx="134" cy="-10" r="4.5"/>',
+      '</g>',
+      '</g>',
+      '</svg>',
       '</div>',
       '<div class="meter-readout"><span>HEAD <strong data-head-angle>0°</strong></span><span>FOOT <strong data-foot-angle>0°</strong></span></div>',
       '<div class="meter-tabs" role="tablist" aria-label="Bed positions">',
@@ -376,14 +383,17 @@
       const foot = meter.querySelector('[data-foot-angle]');
       const copy = meter.querySelector('[data-meter-copy]');
       let active = 0;
+      const headGroup = meter.querySelector('[data-bed-head]');
+      const footGroup = meter.querySelector('[data-bed-foot]');
       const applyAngles = (state, animate) => {
-        if (!diagram) return;
-        const vars = { '--head-angle': state.head, '--foot-angle': state.foot };
-        if (animate && motionEnabled()) {
-          window.gsap.to(diagram, { ...vars, duration: 0.85, ease: 'power2.inOut', overwrite: 'auto' });
+        const headLift = -state.head;
+        const footLift = -state.foot;
+        if (animate && motionEnabled() && headGroup && footGroup) {
+          window.gsap.to(headGroup, { rotation: headLift, duration: 0.85, ease: 'power2.inOut', svgOrigin: '0 0', transformOrigin: '0px 0px', overwrite: 'auto' });
+          window.gsap.to(footGroup, { rotation: footLift, duration: 0.85, ease: 'power2.inOut', svgOrigin: '0 0', transformOrigin: '0px 0px', overwrite: 'auto' });
         } else {
-          diagram.style.setProperty('--head-angle', String(state.head));
-          diagram.style.setProperty('--foot-angle', String(state.foot));
+          headGroup?.setAttribute('transform', `rotate(${headLift})`);
+          footGroup?.setAttribute('transform', `rotate(${footLift})`);
         }
       };
 

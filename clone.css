@@ -158,17 +158,15 @@ h3 { font-size: clamp(25px, 2vw, 34px); line-height: 1.04; letter-spacing: -.025
 .meter-header { display: flex; align-items: start; justify-content: space-between; gap: 18px; margin-bottom: 14px; }
 .meter-header p { margin: 0; color: var(--overcast); font-size: 10px; font-weight: 700; letter-spacing: .14em; }
 .meter-header strong { color: var(--lamplight); font-size: 12px; }
-.bed-diagram { position: relative; height: 148px; margin: 4px 0 18px; overflow: hidden; background: linear-gradient(180deg, rgba(232,228,220,.12), rgba(232,228,220,.75)); }
-.bed-baseline { position: absolute; right: 7%; bottom: 30px; left: 7%; height: 2px; background: rgba(16,27,43,.42); }
-.bed-baseline::after { content: ''; position: absolute; left: 50%; top: -5px; width: 10px; height: 10px; margin-left: -5px; border-radius: 50%; background: var(--lamplight); box-shadow: 0 0 0 3px rgba(184,135,63,.25); }
-.bed-platform { position: absolute; inset: 0; }
-.bed-plank { position: absolute; z-index: 1; height: 24px; border: 1px solid rgba(16,27,43,.34); background: linear-gradient(180deg, #faf7f0, #e8e0d2); box-shadow: 0 6px 14px rgba(16,27,43,.12); will-change: transform; }
-.bed-head { left: 7%; bottom: 32px; width: calc(50% - 8px); border-radius: 10px 4px 4px 10px; transform-origin: 100% 100%; transform: rotate(calc(var(--head-angle, 0) * -1deg)); }
-.bed-foot { right: 7%; bottom: 32px; width: calc(50% - 8px); border-radius: 4px 10px 10px 4px; transform-origin: 0% 100%; transform: rotate(calc(var(--foot-angle, 0) * 1deg)); }
-.bed-hinge-mid { position: absolute; left: 50%; bottom: 28px; z-index: 2; width: 12px; height: 12px; margin-left: -6px; border: 2px solid var(--nightfall); border-radius: 50%; background: var(--bone); }
-.bed-pivot { position: absolute; bottom: 41px; z-index: 3; width: 8px; height: 8px; border-radius: 50%; background: var(--signal); box-shadow: 0 0 0 2px rgba(44,111,168,.35); }
-.bed-pivot-head { left: calc(7% + 6px); }
-.bed-pivot-foot { right: calc(7% + 6px); }
+.bed-diagram { position: relative; height: 148px; margin: 4px 0 18px; overflow: hidden; background: linear-gradient(180deg, rgba(232,228,220,.12), rgba(232,228,220,.78)); }
+.bed-diagram-svg { display: block; }
+.bed-diagram-svg .bed-floor { stroke: rgba(16,27,43,.55); stroke-width: 2; }
+.bed-diagram-svg .bed-floor-label { fill: var(--overcast); font-family: var(--sans); font-size: 9px; letter-spacing: .08em; text-transform: uppercase; }
+.bed-diagram-svg .bed-waist { fill: var(--bone); stroke: var(--lamplight); stroke-width: 2; }
+.bed-diagram-svg .bed-mattress { fill: #f4efe6; stroke: #101b2b; stroke-width: 1.1; }
+.bed-diagram-svg .bed-end { fill: var(--signal); }
+.bed-diagram-svg .bed-head-group,
+.bed-diagram-svg .bed-foot-group { transform-box: fill-box; transform-origin: 0 0; }
 .articulation-section { background: var(--linen); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
 .articulation-grid { display: grid; grid-template-columns: .95fr 1.05fr; gap: clamp(28px, 6vw, 72px); align-items: center; }
 .articulation-copy h2 { max-width: 520px; margin: 14px 0 12px; font-size: clamp(30px, 4vw, 46px); letter-spacing: -.04em; }
