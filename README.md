@@ -10,6 +10,7 @@ This repository is **proprietary**. The concept, visual theme, page architecture
 - Shared shell template, design tokens, and interactive homepage sections (articulation meter, fit check, hotspots)
 - Asset pipeline and local static server for development and QA
 - Research and design-reference docs under `docs/`
+- **Project dossier** (objectives, GSAP modules, full-page captures): [docs/PROJECT_DOSSIER.md](docs/PROJECT_DOSSIER.md)
 
 ## License
 
@@ -26,13 +27,9 @@ npm run build # regenerate pages from templates
 
 ## Preview (local smoke test)
 
-Screenshots captured from `npm start` at desktop width (1440×900):
+Quick captures (1440×900): [docs/screenshots/](docs/screenshots/).
 
-| Page | File |
-|------|------|
-| Home | [docs/screenshots/home.png](docs/screenshots/home.png) |
-| Shop · Adjustable beds | [docs/screenshots/shop-adjustable-beds.png](docs/screenshots/shop-adjustable-beds.png) |
-| About | [docs/screenshots/about.png](docs/screenshots/about.png) |
+**Full-length + GSAP interaction dossier** (updated after `main` merge): [docs/dossier/](docs/dossier/) — see [PROJECT_DOSSIER.md](docs/PROJECT_DOSSIER.md) for objectives, design process, and motion module map.
 
 ## Project structure
 
